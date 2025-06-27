@@ -1,0 +1,3 @@
+"""
+Tests iniciales y configuración.
+"""
