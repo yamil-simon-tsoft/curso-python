@@ -35,6 +35,7 @@ wheels/
 # pytest
 .pytest_cache/
 .coverage
+*.pytest_cache
 
 # IDEs
 .vscode/settings.json
@@ -42,6 +43,11 @@ wheels/
 *.swp
 *.swo
 *~
+
+# Python cache (más específico)
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
 
 # OS
 .DS_Store

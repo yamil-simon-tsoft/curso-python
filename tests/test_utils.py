@@ -8,9 +8,10 @@ import math
 import sys
 import os
 
-# Añadir el directorio src al path para poder importar módulos
+# Añadir el directorio src al path para importaciones
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
+# Importación directa desde utils
 from utils import (
     calcular_area_circulo,
     es_numero_primo,

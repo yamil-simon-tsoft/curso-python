@@ -13,61 +13,120 @@ Este repositorio contiene un proyecto estructurado para aprender programación e
 
 ```
 curso-python/
-├── src/                    # Código fuente principal
-│   ├── __init__.py        # Inicialización del paquete
-│   ├── main.py            # Punto de entrada de la aplicación
-│   └── utils.py           # Funciones de utilidad
-├── tests/                 # Pruebas unitarias
+├── .vscode/               # Configuración de VS Code
+│   └── settings.json     # Configuración optimizada para Python
+├── src/                   # Código fuente principal
+│   ├── __init__.py       # Inicialización del paquete
+│   ├── main.py           # Punto de entrada de la aplicación
+│   └── utils.py          # Funciones de utilidad
+├── tests/                # Pruebas unitarias
 │   ├── __init__.py
-│   └── test_utils.py      # Pruebas para utils.py
-├── notebooks/             # Jupyter Notebooks
-│   └── 01_introduccion_python.ipynb
-├── docs/                  # Documentación
-├── requirements.txt       # Dependencias del proyecto
-├── pyproject.toml        # Configuración del proyecto
-├── .gitignore            # Archivos a ignorar en Git
-└── README.md             # Este archivo
+│   └── test_utils.py     # Pruebas para utils.py (importación simplificada)
+├── notebooks/            # Jupyter Notebooks
+│   └── 01_introduccion_python.ipynb  # Tutorial completo
+├── docs/                 # Documentación
+├── venv/                 # Entorno virtual (creado automáticamente)
+├── .gitignore           # Archivos a ignorar en Git (configurado)
+├── activar.bat          # Script de activación rápida (Windows CMD)
+├── activar.ps1          # Script de activación rápida (PowerShell)
+├── limpiar.py           # Script de limpieza de archivos temporales
+├── limpiar.bat          # Script de limpieza para Windows
+├── pyproject.toml       # Configuración del proyecto
+├── requirements.txt     # Dependencias del proyecto
+├── setup.py             # Script de configuración automática (mejorado)
+└── README.md            # Este archivo
 ```
+
+## ✨ Mejoras Recientes
+
+### 🔧 **Script de configuración mejorado (`setup.py`)**
+- ✅ Verificación completa del entorno virtual
+- ✅ Instalación automática de dependencias
+- ✅ Creación de scripts de activación
+- ✅ Diagnósticos detallados
+- ✅ Instrucciones paso a paso
+
+### 🧪 **Pruebas simplificadas**
+- ✅ Importación directa y robusta en `test_utils.py`
+- ✅ Eliminación de archivos de configuración innecesarios
+- ✅ Limpieza de archivos temporales (`__pycache__`, `.pytest_cache`)
+
+### 🧹 **Manejo de archivos temporales**
+- ✅ Configuración de `.gitignore` para ignorar archivos de cache
+- ✅ Configuración de VS Code para ocultar carpetas temporales
+- ✅ Scripts de limpieza automática (`limpiar.py`, `limpiar.bat`)
+- ✅ Limpieza integrada en el script de setup
+
+> **Nota**: Las carpetas `__pycache__` y `.pytest_cache` se crean automáticamente cuando ejecutas Python o pytest. Esto es normal y necesario para el funcionamiento óptimo, pero no deben incluirse en el repositorio Git. Nuestro proyecto está configurado para manejar esto automáticamente.
+
+### 📝 **Scripts de activación automáticos**
+- ✅ `activar.bat` para Windows Command Prompt
+- ✅ `activar.ps1` para Windows PowerShell
+- ✅ Activación simplificada del entorno virtual
 
 ## 🚀 Inicio Rápido
 
-### 1. Clonar el repositorio
+### 1. Configuración automática (Recomendado)
 
 ```bash
-git clone <url-del-repositorio>
-cd curso-python
+# Ejecutar el script de configuración mejorado
+python setup.py
 ```
 
-### 2. Crear y activar entorno virtual
+Este script automáticamente:
+- ✅ Crea el entorno virtual si no existe
+- ✅ Verifica la instalación de Python
+- ✅ Instala todas las dependencias
+- ✅ Crea scripts de activación rápida
+- ✅ Proporciona instrucciones detalladas
 
-**Windows (PowerShell):**
-```powershell
-python -m venv venv
+### 2. Activación rápida del entorno
+
+**Opción A: Scripts automáticos**
+```bash
+# Windows Command Prompt
+activar.bat
+
+# Windows PowerShell
+.\activar.ps1
+```
+
+**Opción B: Activación manual**
+```bash
+# Windows (PowerShell)
 .\venv\Scripts\Activate.ps1
-```
 
-**macOS/Linux:**
-```bash
-python3 -m venv venv
+# Windows (Command Prompt)
+.\venv\Scripts\activate.bat
+
+# macOS/Linux
 source venv/bin/activate
 ```
 
-### 3. Instalar dependencias
+### 3. Verificar que el entorno está activo
 
+Deberías ver `(venv)` al inicio del prompt:
 ```bash
-pip install -r requirements.txt
+(venv) PS C:\tu\proyecto>
 ```
 
-### 4. Ejecutar el programa principal
+### 4. Ejecutar código
 
 ```bash
+# Programa principal
 python src/main.py
+
+# Pruebas unitarias
+python -m pytest tests/ -v
+
+# Jupyter Notebook
+jupyter notebook notebooks/01_introduccion_python.ipynb
 ```
 
-### 5. Ejecutar las pruebas
+### 5. Desactivar entorno
 
 ```bash
-pytest tests/
+deactivate
 ```
 
 ## 📚 Contenido del Curso
@@ -121,6 +180,64 @@ Para trabajar con los Jupyter Notebooks:
 3. Inicia Jupyter: `jupyter notebook` o `jupyter lab`
 4. Navega a la carpeta `notebooks/`
 5. Abre `01_introduccion_python.ipynb`
+
+## 🛠️ Solución de Problemas
+
+### ❓ **El entorno virtual no se activa**
+```bash
+# 1. Verificar que existe
+dir venv\Scripts\         # Windows
+ls venv/bin/              # Linux/Mac
+
+# 2. Ejecutar configuración automática
+python setup.py
+
+# 3. Usar scripts de activación
+activar.bat               # Windows CMD
+.\activar.ps1            # PowerShell
+```
+
+### ❓ **Error de importación en las pruebas**
+```bash
+# Las pruebas usan importación simplificada
+# Solo ejecuta:
+python -m pytest tests/ -v
+```
+
+### ❓ **Falta algún paquete**
+```bash
+# Instalar dependencias automáticamente
+python setup.py
+
+# O manualmente
+pip install -r requirements.txt
+```
+
+### ❓ **VS Code no reconoce el entorno virtual**
+1. Abre VS Code en la carpeta del proyecto
+2. Presiona `Ctrl+Shift+P`
+3. Escribe "Python: Select Interpreter"
+4. Selecciona: `.\venv\Scripts\python.exe`
+
+### ❓ **Aparecen carpetas __pycache__ o .pytest_cache**
+Esto es normal en Python, pero hay varias formas de limpiarlas:
+
+```bash
+# Opción 1: Script Python
+python limpiar.py
+
+# Opción 2: Script de lote (Windows)
+limpiar.bat
+
+# Opción 3: Configuración automática (incluye limpieza)
+python setup.py
+
+# Opción 4: Manual en PowerShell
+Remove-Item -Path "__pycache__" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path ".pytest_cache" -Recurse -Force -ErrorAction SilentlyContinue
+```
+
+> **💡 Tip**: Estas carpetas están configuradas para ocultarse automáticamente en VS Code y no se incluyen en Git.
 
 ## 🧪 Ejecutar Pruebas
 
