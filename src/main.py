@@ -49,4 +49,21 @@ def calcular_cuadrados(numeros):
     return [num ** 2 for num in numeros]
 
 if __name__ == "__main__":
+    """
+    Esta línea verifica si el archivo se está ejecutando directamente.
+    
+    __name__ es una variable especial de Python que:
+    - Contiene "__main__" cuando el archivo se ejecuta directamente
+    - Contiene el nombre del módulo cuando el archivo es importado
+    
+    Esto permite que el código funcione como script ejecutable
+    y también como módulo importable sin ejecutar main().
+    
+    Ejemplo práctico:
+    - Si ejecutas: python main.py
+      __name__ será "__main__" y se ejecutará main()
+    
+    - Si haces: import main
+      __name__ será "main" y NO se ejecutará main()
+    """
     main()
