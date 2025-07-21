@@ -17,7 +17,8 @@ Repositorio Curso Python/
 │   └── 01_introduccion_python.ipynb
 ├── .vscode/               # Configuraciones de VS Code
 │   ├── settings.example.json  # Plantilla de configuración
-│   └── extensions.json   # Extensiones recomendadas
+│   ├── extensions.json   # Extensiones recomendadas
+│   └── CONFIGURACION.md  # Guía detallada de configuración
 ├── docs/                  # Documentación
 ├── venv/                  # Entorno virtual (no incluido en Git)
 ├── .gitignore            # Archivos excluidos del control de versiones
@@ -60,6 +61,7 @@ python setup.py
 2. Instala las extensiones recomendadas (aparecerá una notificación)
 3. Copia `.vscode/settings.example.json` a `.vscode/settings.json`
 4. Ajusta la ruta del intérprete según tu sistema operativo
+5. **Consulta `.vscode/CONFIGURACION.md`** para entender cada configuración
 
 #### Opción B: Configuración manual
 ```bash
