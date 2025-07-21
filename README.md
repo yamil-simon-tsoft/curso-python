@@ -1,53 +1,205 @@
-# Curso de Python - Proyecto de Aprendizaje
+# Curso Python - Repositorio Colaborativo
 
-Este repositorio contiene un proyecto estructurado para aprender programación en Python, diseñado para principiantes y desarrolladores que quieren establecer buenas prácticas desde el inicio.
+Este repositorio contiene material educativo y ejercicios prácticos para el curso de Python.
 
-## 🎯 Objetivos
-
-- Aprender los fundamentos de Python
-- Establecer un flujo de trabajo profesional
-- Implementar buenas prácticas de desarrollo
-- Crear código mantenible y bien documentado
-
-## 📁 Estructura del Proyecto
+## � Estructura del Proyecto
 
 ```
-curso-python/
-├── .vscode/               # Configuración de VS Code
-│   └── settings.json     # Configuración optimizada para Python
-├── src/                   # Código fuente principal
-│   ├── __init__.py       # Inicialización del paquete
-│   ├── main.py           # Punto de entrada de la aplicación
-│   └── utils.py          # Funciones de utilidad
-├── tests/                # Pruebas unitarias
+Repositorio Curso Python/
+├── src/                    # Código fuente principal
+│   ├── __init__.py        # Configuración del paquete
+│   ├── main.py            # Archivo principal
+│   ├── utils.py           # Funciones de utilidad
+│   └── script.py          # Script generador de Excel
+├── tests/                  # Pruebas unitarias
 │   ├── __init__.py
-│   └── test_utils.py     # Pruebas para utils.py (importación simplificada)
-├── notebooks/            # Jupyter Notebooks
-│   └── 01_introduccion_python.ipynb  # Tutorial completo
-├── docs/                 # Documentación
-├── venv/                 # Entorno virtual (creado automáticamente)
-├── .gitignore           # Archivos a ignorar en Git (configurado)
-├── activar.bat          # Script de activación rápida (Windows CMD)
-├── activar.ps1          # Script de activación rápida (PowerShell)
-├── limpiar.py           # Script de limpieza de archivos temporales
-├── limpiar.bat          # Script de limpieza para Windows
-├── pyproject.toml       # Configuración del proyecto
-├── requirements.txt     # Dependencias del proyecto
-├── setup.py             # Script de configuración automática (mejorado)
-└── README.md            # Este archivo
+│   └── test_utils.py      # Pruebas para utils.py
+├── notebooks/             # Jupyter Notebooks educativos
+│   └── 01_introduccion_python.ipynb
+├── .vscode/               # Configuraciones de VS Code
+│   ├── settings.example.json  # Plantilla de configuración
+│   └── extensions.json   # Extensiones recomendadas
+├── docs/                  # Documentación
+├── venv/                  # Entorno virtual (no incluido en Git)
+├── .gitignore            # Archivos excluidos del control de versiones
+├── pyproject.toml        # Configuración del proyecto
+├── requirements.txt      # Dependencias
+├── setup.py              # Script de configuración
+└── README.md             # Este archivo
 ```
 
-## ✨ Mejoras Recientes
+## 🚀 Configuración Inicial
 
-### 🔧 **Script de configuración mejorado (`setup.py`)**
-- ✅ Verificación completa del entorno virtual
-- ✅ Instalación automática de dependencias
-- ✅ Creación de scripts de activación
-- ✅ Diagnósticos detallados
-- ✅ Instrucciones paso a paso
+### 1. Clonar el repositorio
+```bash
+git clone <url-del-repositorio>
+cd "Repositorio Curso Python"
+```
 
-### 🧪 **Pruebas simplificadas**
-- ✅ Importación directa y robusta en `test_utils.py`
+### 2. Crear entorno virtual
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS/Linux
+python -m venv venv
+source venv/bin/activate
+```
+
+### 3. Instalar dependencias
+```bash
+pip install -r requirements.txt
+# o ejecutar:
+python setup.py
+```
+
+### 4. Configurar VS Code
+
+#### Opción A: Configuración automática
+1. Abre el proyecto en VS Code
+2. Instala las extensiones recomendadas (aparecerá una notificación)
+3. Copia `.vscode/settings.example.json` a `.vscode/settings.json`
+4. Ajusta la ruta del intérprete según tu sistema operativo
+
+#### Opción B: Configuración manual
+```bash
+# Copiar configuración de ejemplo
+copy .vscode\settings.example.json .vscode\settings.json
+
+# Editar según tu sistema operativo:
+# Windows: "./venv/Scripts/python.exe"
+# macOS/Linux: "./venv/bin/python"
+```
+
+## 🔧 Configuraciones del IDE
+
+### Extensiones Recomendadas
+- **Python**: Soporte completo para Python
+- **Black Formatter**: Formateo automático de código
+- **Flake8**: Linting y análisis de código
+- **Jupyter**: Soporte para notebooks
+- **Pylint**: Análisis adicional de código
+- **MyPy**: Verificación de tipos
+
+### Configuraciones Importantes
+- **Intérprete**: Configurado para usar el entorno virtual local
+- **Testing**: Configurado para usar pytest
+- **Formateo**: Black con línea máxima de 88 caracteres
+- **Análisis**: Incluye el directorio `src` en el path
+- **Exclusiones**: Oculta archivos temporales y cache
+
+## 📝 Archivos de Configuración
+
+### ⚠️ Importante para Colaboradores
+
+**NO subir al repositorio:**
+- `.vscode/settings.json` (configuraciones personales)
+- `.vscode/launch.json` (configuraciones de debug personales)
+- `venv/` (entorno virtual)
+- `__pycache__/` (archivos de cache)
+- `*.xlsx` (archivos Excel generados)
+
+**SÍ incluir en el repositorio:**
+- `.vscode/settings.example.json` (plantilla compartida)
+- `.vscode/extensions.json` (extensiones recomendadas)
+- `requirements.txt` (dependencias del proyecto)
+
+### ¿Por qué esta estructura?
+
+1. **Flexibilidad**: Cada desarrollador puede tener sus preferencias personales
+2. **Consistencia**: Las configuraciones esenciales del proyecto se mantienen
+3. **Compatibilidad**: Funciona en Windows, macOS y Linux
+4. **Colaboración**: Facilita el trabajo en equipo sin conflictos
+
+## 🏃‍♂️ Ejecutar el Proyecto
+
+### Archivo Principal
+```bash
+cd src
+python main.py
+```
+
+### Script Generador de Excel
+```bash
+cd src
+python script.py
+```
+
+### Ejecutar Tests
+```bash
+pytest tests/
+```
+
+### Activar entorno virtual
+```bash
+# Windows PowerShell
+.\activar.ps1
+
+# Windows CMD
+activar.bat
+
+# Manual
+venv\Scripts\activate
+```
+
+## 🤝 Colaboración
+
+### Primera vez trabajando en el proyecto
+1. Clona el repositorio
+2. Configura tu entorno virtual
+3. Copia `settings.example.json` a `settings.json`
+4. Ajusta las configuraciones según tu sistema
+5. Instala las extensiones recomendadas
+
+### Trabajando en equipo
+- Las configuraciones personales del IDE no se sincronizarán
+- Las configuraciones esenciales del proyecto sí se mantendrán
+- Cada desarrollador puede personalizar su experiencia sin afectar a otros
+- Los archivos generados (Excel, cache) no se suben al repositorio
+
+### Resolución de problemas comunes
+
+#### "No se encuentra el intérprete de Python"
+1. Verifica que el entorno virtual esté activado
+2. Ajusta la ruta en `.vscode/settings.json`:
+   - Windows: `"./venv/Scripts/python.exe"`
+   - macOS/Linux: `"./venv/bin/python"`
+
+#### "Errores de importación en tests"
+1. Verifica que `python.analysis.extraPaths` incluya `"./src"`
+2. Ejecuta tests desde la raíz del proyecto
+
+#### "VS Code no reconoce las extensiones"
+1. Abre la paleta de comandos (Ctrl+Shift+P)
+2. Ejecuta "Extensions: Show Recommended Extensions"
+3. Instala las extensiones sugeridas
+
+## 📚 Contenido Educativo
+
+### Conceptos aprendidos
+- **Estructura de paquetes Python** (archivos `__init__.py`)
+- **Configuración de entornos virtuales**
+- **Buenas prácticas de Git** (`.gitignore`, colaboración)
+- **Testing con pytest**
+- **Documentación de código**
+- **Configuración de IDEs** para trabajo colaborativo
+
+### Archivos destacados
+- `src/main.py`: Ejemplo de punto de entrada con `if __name__ == "__main__"`
+- `src/__init__.py`: Documentación completa sobre paquetes Python
+- `script.py`: Generación de archivos Excel con `openpyxl`
+
+## 📚 Recursos Adicionales
+
+- [Documentación de Python](https://docs.python.org/3/)
+- [Guía de VS Code para Python](https://code.visualstudio.com/docs/python/python-tutorial)
+- [Buenas prácticas de Git](https://git-scm.com/book/en/v2)
+- [Testing con pytest](https://docs.pytest.org/)
+
+---
+
+**¡Feliz codificación! 🐍✨**
 - ✅ Eliminación de archivos de configuración innecesarios
 - ✅ Limpieza de archivos temporales (`__pycache__`, `.pytest_cache`)
 
