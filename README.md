@@ -9,8 +9,7 @@ Repositorio Curso Python/
 ├── src/                    # Código fuente principal
 │   ├── __init__.py        # Configuración del paquete
 │   ├── main.py            # Archivo principal
-│   ├── utils.py           # Funciones de utilidad
-│   └── script.py          # Script generador de Excel
+│   └── utils.py           # Funciones de utilidad
 ├── tests/                  # Pruebas unitarias
 │   ├── __init__.py
 │   └── test_utils.py      # Pruebas para utils.py
@@ -98,7 +97,6 @@ copy .vscode\settings.example.json .vscode\settings.json
 - `.vscode/launch.json` (configuraciones de debug personales)
 - `venv/` (entorno virtual)
 - `__pycache__/` (archivos de cache)
-- `*.xlsx` (archivos Excel generados)
 
 **SÍ incluir en el repositorio:**
 - `.vscode/settings.example.json` (plantilla compartida)
@@ -118,12 +116,6 @@ copy .vscode\settings.example.json .vscode\settings.json
 ```bash
 cd src
 python main.py
-```
-
-### Script Generador de Excel
-```bash
-cd src
-python script.py
 ```
 
 ### Ejecutar Tests
@@ -156,7 +148,7 @@ venv\Scripts\activate
 - Las configuraciones personales del IDE no se sincronizarán
 - Las configuraciones esenciales del proyecto sí se mantendrán
 - Cada desarrollador puede personalizar su experiencia sin afectar a otros
-- Los archivos generados (Excel, cache) no se suben al repositorio
+- Los archivos generados (cache, temporales) no se suben al repositorio
 
 ### Resolución de problemas comunes
 
@@ -188,7 +180,7 @@ venv\Scripts\activate
 ### Archivos destacados
 - `src/main.py`: Ejemplo de punto de entrada con `if __name__ == "__main__"`
 - `src/__init__.py`: Documentación completa sobre paquetes Python
-- `script.py`: Generación de archivos Excel con `openpyxl`
+- `src/utils.py`: Funciones de utilidad y ejemplos prácticos
 
 ## 📚 Recursos Adicionales
 
