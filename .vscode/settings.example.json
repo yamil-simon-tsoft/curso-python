@@ -26,12 +26,14 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
         "**/venv": true,
         "**/*.pyc": true
     },
     "search.exclude": {
         "**/__pycache__": true,
         "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
         "**/venv": true,
         "**/*.pyc": true
     },

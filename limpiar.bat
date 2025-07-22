@@ -17,6 +17,12 @@ if exist ".pytest_cache" (
     rmdir /s /q ".pytest_cache" 2>nul
 )
 
+REM Limpiar .mypy_cache
+if exist ".mypy_cache" (
+    echo   ✅ Eliminando: .mypy_cache
+    rmdir /s /q ".mypy_cache" 2>nul
+)
+
 REM Limpiar archivos .pyc
 for /r . %%f in (*.pyc) do (
     if not "%%f"=="*venv*" (

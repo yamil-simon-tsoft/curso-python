@@ -1,15 +1,17 @@
 # Curso Python - Repositorio Colaborativo
 
-Este repositorio contiene material educativo y ejercicios prácticos para el curso de Python.
+Este repositorio contiene material educativo y ejercicios prácticos para el curso de Python, diseñado para trabajo colaborativo y aprendizaje efectivo.
 
-## � Estructura del Proyecto
+## 📋 Estructura del Proyecto
 
 ```
 Repositorio Curso Python/
 ├── src/                    # Código fuente principal
 │   ├── __init__.py        # Configuración del paquete
-│   ├── main.py            # Archivo principal
-│   └── utils.py           # Funciones de utilidad
+│   ├── main.py            # Archivo principal con ejemplos
+│   ├── utils.py           # Funciones de utilidad
+│   ├── ejemplo_problematico.py  # Ejemplos para herramientas de análisis
+│   └── ejemplo_tipos.py   # Ejemplos de anotaciones de tipo
 ├── tests/                  # Pruebas unitarias
 │   ├── __init__.py
 │   └── test_utils.py      # Pruebas para utils.py
@@ -22,213 +24,63 @@ Repositorio Curso Python/
 ├── docs/                  # Documentación
 ├── venv/                  # Entorno virtual (no incluido en Git)
 ├── .gitignore            # Archivos excluidos del control de versiones
-├── pyproject.toml        # Configuración del proyecto
-├── requirements.txt      # Dependencias
-├── setup.py              # Script de configuración
-└── README.md             # Este archivo
+├── activar.bat            # Script de activación (Windows CMD)
+├── activar.ps1            # Script de activación (PowerShell)
+├── limpiar.bat            # Script de limpieza (Windows)
+├── limpiar.py             # Script de limpieza de archivos temporales
+├── pyproject.toml         # Configuración del proyecto
+├── requirements.txt       # Dependencias del proyecto
+├── setup.py               # Script de configuración automática
+└── README.md              # Este archivo
 ```
 
-## 🚀 Configuración Inicial
+## 🚀 Inicio Rápido
 
-### 1. Clonar el repositorio
+### Paso 1: Obtener el Proyecto
+
 ```bash
+# Clonar el repositorio
 git clone <url-del-repositorio>
 cd "Repositorio Curso Python"
 ```
 
-### 2. Crear entorno virtual
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
+### Paso 2: Configuración del Entorno
 
-# macOS/Linux
-python -m venv venv
-source venv/bin/activate
-```
+#### Opción A: Configuración Automática (Recomendado)
 
-### 3. Instalar dependencias
 ```bash
-pip install -r requirements.txt
-# o ejecutar:
+# Ejecutar el script de configuración completa
 python setup.py
 ```
 
-### 4. Configurar VS Code
-
-#### Opción A: Configuración automática
-1. Abre el proyecto en VS Code
-2. Instala las extensiones recomendadas (aparecerá una notificación)
-3. Copia `.vscode/settings.example.json` a `.vscode/settings.json`
-4. Ajusta la ruta del intérprete según tu sistema operativo
-5. **Consulta `.vscode/CONFIGURACION.md`** para entender cada configuración
-
-#### Opción B: Configuración manual
-```bash
-# Copiar configuración de ejemplo
-copy .vscode\settings.example.json .vscode\settings.json
-
-# Editar según tu sistema operativo:
-# Windows: "./venv/Scripts/python.exe"
-# macOS/Linux: "./venv/bin/python"
-```
-
-## 🔧 Configuraciones del IDE
-
-### Extensiones Recomendadas
-- **Python**: Soporte completo para Python
-- **Black Formatter**: Formateo automático de código
-- **Flake8**: Linting y análisis de código
-- **Jupyter**: Soporte para notebooks
-- **Pylint**: Análisis adicional de código
-- **MyPy**: Verificación de tipos
-
-### Configuraciones Importantes
-- **Intérprete**: Configurado para usar el entorno virtual local
-- **Testing**: Configurado para usar pytest
-- **Formateo**: Black con línea máxima de 88 caracteres
-- **Análisis**: Incluye el directorio `src` en el path
-- **Exclusiones**: Oculta archivos temporales y cache
-
-## 📝 Archivos de Configuración
-
-### ⚠️ Importante para Colaboradores
-
-**NO subir al repositorio:**
-- `.vscode/settings.json` (configuraciones personales)
-- `.vscode/launch.json` (configuraciones de debug personales)
-- `venv/` (entorno virtual)
-- `__pycache__/` (archivos de cache)
-
-**SÍ incluir en el repositorio:**
-- `.vscode/settings.example.json` (plantilla compartida)
-- `.vscode/extensions.json` (extensiones recomendadas)
-- `requirements.txt` (dependencias del proyecto)
-
-### ¿Por qué esta estructura?
-
-1. **Flexibilidad**: Cada desarrollador puede tener sus preferencias personales
-2. **Consistencia**: Las configuraciones esenciales del proyecto se mantienen
-3. **Compatibilidad**: Funciona en Windows, macOS y Linux
-4. **Colaboración**: Facilita el trabajo en equipo sin conflictos
-
-## 🏃‍♂️ Ejecutar el Proyecto
-
-### Archivo Principal
-```bash
-cd src
-python main.py
-```
-
-### Ejecutar Tests
-```bash
-pytest tests/
-```
-
-### Activar entorno virtual
-```bash
-# Windows PowerShell
-.\activar.ps1
-
-# Windows CMD
-activar.bat
-
-# Manual
-venv\Scripts\activate
-```
-
-## 🤝 Colaboración
-
-### Primera vez trabajando en el proyecto
-1. Clona el repositorio
-2. Configura tu entorno virtual
-3. Copia `settings.example.json` a `settings.json`
-4. Ajusta las configuraciones según tu sistema
-5. Instala las extensiones recomendadas
-
-### Trabajando en equipo
-- Las configuraciones personales del IDE no se sincronizarán
-- Las configuraciones esenciales del proyecto sí se mantendrán
-- Cada desarrollador puede personalizar su experiencia sin afectar a otros
-- Los archivos generados (cache, temporales) no se suben al repositorio
-
-### Resolución de problemas comunes
-
-#### "No se encuentra el intérprete de Python"
-1. Verifica que el entorno virtual esté activado
-2. Ajusta la ruta en `.vscode/settings.json`:
-   - Windows: `"./venv/Scripts/python.exe"`
-   - macOS/Linux: `"./venv/bin/python"`
-
-#### "Errores de importación en tests"
-1. Verifica que `python.analysis.extraPaths` incluya `"./src"`
-2. Ejecuta tests desde la raíz del proyecto
-
-#### "VS Code no reconoce las extensiones"
-1. Abre la paleta de comandos (Ctrl+Shift+P)
-2. Ejecuta "Extensions: Show Recommended Extensions"
-3. Instala las extensiones sugeridas
-
-## 📚 Contenido Educativo
-
-### Conceptos aprendidos
-- **Estructura de paquetes Python** (archivos `__init__.py`)
-- **Configuración de entornos virtuales**
-- **Buenas prácticas de Git** (`.gitignore`, colaboración)
-- **Testing con pytest**
-- **Documentación de código**
-- **Configuración de IDEs** para trabajo colaborativo
-
-### Archivos destacados
-- `src/main.py`: Ejemplo de punto de entrada con `if __name__ == "__main__"`
-- `src/__init__.py`: Documentación completa sobre paquetes Python
-- `src/utils.py`: Funciones de utilidad y ejemplos prácticos
-
-## 📚 Recursos Adicionales
-
-- [Documentación de Python](https://docs.python.org/3/)
-- [Guía de VS Code para Python](https://code.visualstudio.com/docs/python/python-tutorial)
-- [Buenas prácticas de Git](https://git-scm.com/book/en/v2)
-- [Testing con pytest](https://docs.pytest.org/)
-
----
-
-**¡Feliz codificación! 🐍✨**
-- ✅ Eliminación de archivos de configuración innecesarios
-- ✅ Limpieza de archivos temporales (`__pycache__`, `.pytest_cache`)
-
-### 🧹 **Manejo de archivos temporales**
-- ✅ Configuración de `.gitignore` para ignorar archivos de cache
-- ✅ Configuración de VS Code para ocultar carpetas temporales
-- ✅ Scripts de limpieza automática (`limpiar.py`, `limpiar.bat`)
-- ✅ Limpieza integrada en el script de setup
-
-> **Nota**: Las carpetas `__pycache__` y `.pytest_cache` se crean automáticamente cuando ejecutas Python o pytest. Esto es normal y necesario para el funcionamiento óptimo, pero no deben incluirse en el repositorio Git. Nuestro proyecto está configurado para manejar esto automáticamente.
-
-### 📝 **Scripts de activación automáticos**
-- ✅ `activar.bat` para Windows Command Prompt
-- ✅ `activar.ps1` para Windows PowerShell
-- ✅ Activación simplificada del entorno virtual
-
-## 🚀 Inicio Rápido
-
-### 1. Configuración automática (Recomendado)
-
-```bash
-# Ejecutar el script de configuración mejorado
-python setup.py
-```
-
-Este script automáticamente:
+**Este script automáticamente:**
 - ✅ Crea el entorno virtual si no existe
 - ✅ Verifica la instalación de Python
 - ✅ Instala todas las dependencias
 - ✅ Crea scripts de activación rápida
 - ✅ Proporciona instrucciones detalladas
 
-### 2. Activación rápida del entorno
+#### Opción B: Configuración Manual
 
-**Opción A: Scripts automáticos**
+```bash
+# 1. Crear entorno virtual
+python -m venv venv
+
+# 2. Activar entorno virtual
+# Windows (PowerShell)
+.\venv\Scripts\Activate.ps1
+# Windows (Command Prompt)
+.\venv\Scripts\activate.bat
+# macOS/Linux
+source venv/bin/activate
+
+# 3. Instalar dependencias
+pip install -r requirements.txt
+```
+
+### Scripts de Activación Rápida
+
+**Disponibles después de la configuración:**
 ```bash
 # Windows Command Prompt
 activar.bat
@@ -237,230 +89,385 @@ activar.bat
 .\activar.ps1
 ```
 
-**Opción B: Activación manual**
-```bash
-# Windows (PowerShell)
-.\venv\Scripts\Activate.ps1
-
-# Windows (Command Prompt)
-.\venv\Scripts\activate.bat
-
-# macOS/Linux
-source venv/bin/activate
-```
-
-### 3. Verificar que el entorno está activo
-
+**Verificar entorno activo:**
 Deberías ver `(venv)` al inicio del prompt:
 ```bash
 (venv) PS C:\tu\proyecto>
 ```
 
-### 4. Ejecutar código
+### Configurar VS Code
+
+1. Abre el proyecto en VS Code
+2. Instala las extensiones recomendadas (aparecerá notificación automática)
+3. Copia `.vscode/settings.example.json` a `.vscode/settings.json`
+4. Ajusta la ruta del intérprete según tu sistema operativo
+5. **Lee `.vscode/CONFIGURACION.md`** para comprender cada configuración en detalle
+
+### Ejecutar el Proyecto
 
 ```bash
 # Programa principal
 python src/main.py
 
-# Pruebas unitarias
-python -m pytest tests/ -v
+# Ejecutar todas las pruebas
+pytest tests/
 
-# Jupyter Notebook
+# Iniciar Jupyter Notebook
 jupyter notebook notebooks/01_introduccion_python.ipynb
 ```
 
-### 5. Desactivar entorno
+## 🔧 Configuración Colaborativa
 
-```bash
-deactivate
-```
+### ⚠️ Reglas para Colaboradores
 
-## 📚 Contenido del Curso
+**❌ NO incluir en Git:**
+- `.vscode/settings.json` (configuraciones personales del IDE)
+- `.vscode/launch.json` (configuraciones de debug personales)
+- `venv/` (entorno virtual local)
+- `__pycache__/`, `.pytest_cache/` y `.mypy_cache/` (archivos de cache)
 
-### Módulos Incluidos
+**✅ SÍ incluir en Git:**
+- `.vscode/settings.example.json` (plantilla compartida)
+- `.vscode/extensions.json` (extensiones recomendadas)
+- `.vscode/CONFIGURACION.md` (documentación de configuración)
 
-1. **`src/main.py`**: Programa principal con ejemplos básicos
-   - Variables y tipos de datos
-   - Funciones básicas
-   - Estructuras de control
+### ¿Por qué esta estructura colaborativa?
 
-2. **`src/utils.py`**: Funciones de utilidad
-   - Cálculos matemáticos
-   - Conversiones
-   - Estadísticas básicas
+1. **🔄 Flexibilidad**: Cada desarrollador personaliza su IDE sin conflictos
+2. **🎯 Consistencia**: Configuraciones esenciales sincronizadas entre todos
+3. **🌍 Compatibilidad**: Funciona en Windows, macOS y Linux
+4. **👥 Colaboración**: Evita conflictos en diferentes entornos de desarrollo
 
-3. **`tests/test_utils.py`**: Pruebas unitarias
-   - Verificación de funciones
-   - Casos de prueba variados
-   - Manejo de excepciones
+### Extensiones VS Code Recomendadas
 
-4. **`notebooks/01_introduccion_python.ipynb`**: Tutorial interactivo
-   - Configuración del entorno
-   - Conceptos fundamentales
-   - Ejemplos prácticos
+- **Python** (`ms-python.python`): Soporte completo para Python
+- **Black Formatter** (`ms-python.black-formatter`): Formateo automático
+- **Flake8** (`ms-python.flake8`): Análisis y linting de código
+- **Jupyter** (`ms-toolsai.jupyter`): Soporte para notebooks
+- **Pylint** (`ms-python.pylint`): Análisis estático avanzado
+- **MyPy Type Checker** (`ms-python.mypy-type-checker`): Verificación de tipos
+
+### Configuraciones Clave del IDE
+
+- **🐍 Intérprete**: Configurado para usar el entorno virtual local
+- **🧪 Testing**: Framework pytest configurado automáticamente
+- **🎨 Formateo**: Black con línea máxima de 88 caracteres
+- **📁 Análisis**: Directorio `src` incluido en el path de análisis
+- **🙈 Exclusiones**: Archivos temporales y cache ocultos automáticamente
+
+## 📚 Contenido Educativo
+
+### Conceptos Python Implementados
+
+- **📦 Estructura de paquetes** (archivos `__init__.py` explicados)
+- **🔧 Configuración de entornos virtuales**
+- **📝 Buenas prácticas de Git** (`.gitignore`, colaboración)
+- **🧪 Testing con pytest**
+- **📖 Documentación de código**
+- **⚙️ Configuración de IDEs** para trabajo en equipo
+
+### Módulos del Curso
+
+#### 1. **`src/main.py`** - Programa Principal
+- Punto de entrada con `if __name__ == "__main__"`
+- Ejemplos de variables y tipos de datos
+- Funciones básicas y estructuras de control
+- Documentación educativa detallada
+
+#### 2. **`src/utils.py`** - Funciones de Utilidad
+- Cálculos matemáticos básicos
+- Conversiones de unidades
+- Estadísticas simples
+- Ejemplos prácticos comentados
+
+#### 3. **`tests/test_utils.py`** - Pruebas Unitarias
+- Verificación de todas las funciones
+- Casos de prueba variados y casos límite
+- Manejo de excepciones
+- Ejemplos de buenas prácticas en testing
+
+#### 4. **`notebooks/01_introduccion_python.ipynb`** - Tutorial Interactivo
+- Configuración paso a paso del entorno
+- Conceptos fundamentales de Python
+- Ejemplos ejecutables y experimentación
+
+#### 5. **`src/ejemplo_problematico.py`** - Ejemplos para Herramientas de Análisis
+- Código con problemas de estilo intencionales
+- Ejemplos para demostrar Black, Flake8 y Pylint
+- Variables mal nombradas y formateo inconsistente
+- Ideal para aprender a usar herramientas de calidad de código
+
+#### 6. **`src/ejemplo_tipos.py`** - Ejemplos de Anotaciones de Tipo
+- Demostración de anotaciones de tipo en Python
+- Ejemplos para MyPy type checker
+- Funciones con y sin anotaciones de tipo
+- Casos problemáticos y mejores prácticas
+
+#### 7. **Archivos Destacados**
+- **`src/__init__.py`**: Documentación completa sobre paquetes Python
+- **`setup.py`**: Script de configuración automática mejorado
+- **Scripts de activación**: `activar.bat` y `activar.ps1`
 
 ## 🛠️ Herramientas y Dependencias
 
 ### Dependencias Principales
-- `numpy`: Computación numérica
-- `pandas`: Análisis de datos
-- `matplotlib`: Visualización
-- `requests`: Peticiones HTTP
+```
+numpy>=1.24.0          # Computación numérica
+pandas>=2.0.0          # Análisis de datos
+matplotlib>=3.7.0      # Visualización
+requests>=2.31.0       # Peticiones HTTP
+```
 
 ### Herramientas de Desarrollo
-- `pytest`: Framework de pruebas
-- `black`: Formateador de código
-- `flake8`: Linting
-- `pylint`: Análisis estático
+```
+pytest>=7.4.0          # Framework de pruebas
+black>=23.0.0          # Formateador de código
+flake8>=6.0.0          # Linting y análisis
+pylint>=2.17.0         # Análisis estático avanzado
+```
 
 ### Entorno Jupyter
-- `jupyter`: Notebooks interactivos
-- `ipykernel`: Kernel de Python
-
-## 📖 Uso de los Notebooks
-
-Para trabajar con los Jupyter Notebooks:
-
-1. Asegúrate de tener el entorno virtual activado
-2. Instala las dependencias: `pip install -r requirements.txt`
-3. Inicia Jupyter: `jupyter notebook` o `jupyter lab`
-4. Navega a la carpeta `notebooks/`
-5. Abre `01_introduccion_python.ipynb`
-
-## 🛠️ Solución de Problemas
-
-### ❓ **El entorno virtual no se activa**
-```bash
-# 1. Verificar que existe
-dir venv\Scripts\         # Windows
-ls venv/bin/              # Linux/Mac
-
-# 2. Ejecutar configuración automática
-python setup.py
-
-# 3. Usar scripts de activación
-activar.bat               # Windows CMD
-.\activar.ps1            # PowerShell
+```
+jupyter>=1.0.0         # Notebooks interactivos
+ipykernel>=6.25.0      # Kernel de Python para Jupyter
 ```
 
-### ❓ **Error de importación en las pruebas**
-```bash
-# Las pruebas usan importación simplificada
-# Solo ejecuta:
-python -m pytest tests/ -v
-```
+## 🧹 Limpieza y Mantenimiento
 
-### ❓ **Falta algún paquete**
-```bash
-# Instalar dependencias automáticamente
-python setup.py
-
-# O manualmente
-pip install -r requirements.txt
-```
-
-### ❓ **VS Code no reconoce el entorno virtual**
-1. Abre VS Code en la carpeta del proyecto
-2. Presiona `Ctrl+Shift+P`
-3. Escribe "Python: Select Interpreter"
-4. Selecciona: `.\venv\Scripts\python.exe`
-
-### ❓ **Aparecen carpetas __pycache__ o .pytest_cache**
-Esto es normal en Python, pero hay varias formas de limpiarlas:
+### Scripts de Limpieza Disponibles
 
 ```bash
-# Opción 1: Script Python
+# Opción 1: Script Python multiplataforma
 python limpiar.py
 
-# Opción 2: Script de lote (Windows)
+# Opción 2: Script Windows
 limpiar.bat
 
-# Opción 3: Configuración automática (incluye limpieza)
-python setup.py
-
-# Opción 4: Manual en PowerShell
-Remove-Item -Path "__pycache__" -Recurse -Force -ErrorAction SilentlyContinue
-Remove-Item -Path ".pytest_cache" -Recurse -Force -ErrorAction SilentlyContinue
+# Opción 3: Limpieza integrada en setup
+python setup.py  # Incluye limpieza automática
 ```
 
-> **💡 Tip**: Estas carpetas están configuradas para ocultarse automáticamente en VS Code y no se incluyen en Git.
+### Qué se limpia automáticamente:
+- Carpetas `__pycache__/` (cache de Python)
+- Carpetas `.pytest_cache/` (cache de pytest)
+- Carpetas `.mypy_cache/` (cache de MyPy)
+- Archivos `.pyc` compilados
+- Archivos temporales del sistema
+
+> **💡 Tip**: Estas carpetas se crean automáticamente y son normales. Están configuradas para ocultarse en VS Code y excluirse de Git.
+
+## 📖 Trabajando con Notebooks
+
+### Configuración Jupyter
+```bash
+# 1. Activar entorno virtual
+.\activar.ps1  # Windows PowerShell
+# o
+activar.bat    # Windows CMD
+
+# 2. Verificar instalación
+jupyter --version
+
+# 3. Iniciar Jupyter
+jupyter notebook
+# o
+jupyter lab
+```
+
+### Uso del Notebook Educativo
+1. Navega a `notebooks/01_introduccion_python.ipynb`
+2. Ejecuta las celdas paso a paso
+3. Experimenta con el código
+4. Completa los ejercicios propuestos
+
+## 🆘 Solución de Problemas Comunes
+
+### ❓ **Problema: El entorno virtual no se activa**
+
+**Diagnóstico:**
+```bash
+# Verificar que existe el entorno
+dir venv\Scripts\         # Windows
+ls venv/bin/              # Linux/Mac
+```
+
+**Soluciones:**
+```bash
+# 1. Ejecutar configuración automática
+python setup.py
+
+# 2. Usar scripts de activación
+activar.bat               # Windows CMD
+.\activar.ps1            # PowerShell
+
+# 3. Activación manual
+.\venv\Scripts\Activate.ps1  # PowerShell
+.\venv\Scripts\activate.bat  # CMD
+```
+
+### ❓ **Problema: VS Code no encuentra el intérprete de Python**
+
+**Solución paso a paso:**
+1. Verifica que el entorno virtual esté activado (debe aparecer `(venv)`)
+2. En VS Code: `Ctrl+Shift+P` → "Python: Select Interpreter"
+3. Selecciona: `.\venv\Scripts\python.exe` (Windows)
+4. Si no aparece, ajusta en `.vscode/settings.json`:
+   ```json
+   {
+     "python.defaultInterpreterPath": "./venv/Scripts/python.exe"
+   }
+   ```
+
+### ❓ **Problema: Errores de importación en tests**
+
+**Verificaciones:**
+1. El directorio `src` debe estar en el path de análisis
+2. Ejecutar tests desde la raíz del proyecto: `pytest tests/`
+3. Verificar configuración en `.vscode/settings.json`:
+   ```json
+   {
+     "python.analysis.extraPaths": ["./src"]
+   }
+   ```
+
+### ❓ **Problema: VS Code no reconoce las extensiones**
+
+**Solución:**
+1. `Ctrl+Shift+P` → "Extensions: Show Recommended Extensions"
+2. Instalar todas las extensiones sugeridas
+3. Reiniciar VS Code si es necesario
+
+### ❓ **Problema: Aparecen carpetas de cache (__pycache__, .pytest_cache, .mypy_cache)**
+
+**Esto es completamente normal**, pero si molestan:
+
+```bash
+# Limpieza automática
+python limpiar.py
+
+# Limpieza manual (PowerShell)
+Remove-Item -Path "__pycache__" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path ".pytest_cache" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path ".mypy_cache" -Recurse -Force -ErrorAction SilentlyContinue
+```
+
+> **Nota**: Estas carpetas mejoran el rendimiento y se recrean automáticamente. Están configuradas para ocultarse en VS Code.
+
+### ❓ **Problema: Jupyter no inicia o no encuentra el kernel**
+
+**Solución:**
+```bash
+# 1. Activar entorno
+.\activar.ps1
+
+# 2. Instalar kernel
+python -m ipykernel install --user --name venv --display-name "Python (venv)"
+
+# 3. Iniciar Jupyter
+jupyter notebook
+```
 
 ## 🧪 Ejecutar Pruebas
 
-### Todas las pruebas
+### Comandos de Testing
+
 ```bash
+# Todas las pruebas
 pytest
-```
 
-### Pruebas con cobertura
-```bash
+# Con reporte de cobertura
 pytest --cov=src
+
+# Pruebas específicas
+pytest tests/test_utils.py
+
+# Verbose (información detallada)
+pytest -v
+
+# Parar en el primer fallo
+pytest -x
 ```
 
-### Pruebas específicas
-```bash
-pytest tests/test_utils.py::TestCalcularAreaCirculo
-```
+## 🎨 Formateo y Calidad de Código
 
-## 🎨 Formateo y Linting
-
-### Formatear código con Black
+### Formateo Automático
 ```bash
+# Formatear todo el código
 black src/ tests/
+
+# Verificar sin cambiar
+black --check src/ tests/
 ```
 
-### Verificar estilo con Flake8
+### Análisis de Código
 ```bash
+# Linting con Flake8
 flake8 src/ tests/
-```
 
-### Análisis estático con Pylint
-```bash
+# Análisis con Pylint
 pylint src/
+
+# Verificación de tipos con MyPy
+mypy --strict src/
 ```
 
-## 📝 Convenciones
+## 🤝 Flujo de Trabajo Colaborativo
 
-### Estilo de Código
-- Seguimos [PEP 8](https://pep8.org/) para el estilo de Python
-- Usamos [Black](https://black.readthedocs.io/) para formateo automático
-- Nombres de variables y funciones en `snake_case`
-- Nombres de clases en `PascalCase`
+### Primera Configuración
+1. **Clonar el repositorio**
+2. **Ejecutar `python setup.py`** para configuración automática
+3. **Configurar VS Code** según las instrucciones
+4. **Leer `.vscode/CONFIGURACION.md`** para entender cada configuración
+5. **Instalar extensiones recomendadas**
 
-### Documentación
-- Todas las funciones deben tener docstrings
-- Incluir descripción, parámetros y valor de retorno
-- Ejemplos de uso cuando sea apropiado
+### Trabajando en Equipo
 
-### Pruebas
-- Una prueba por funcionalidad específica
-- Nombres descriptivos para las pruebas
-- Incluir casos de borde y manejo de errores
+**✅ Ventajas de nuestro setup:**
+- Configuraciones personales no afectan a otros desarrolladores
+- Configuraciones del proyecto se mantienen sincronizadas
+- Compatible con diferentes sistemas operativos
+- Archivos temporales no interfieren con Git
 
-## 🤝 Contribuir
+**📝 Convenciones del Código:**
+- **Estilo**: Seguimos [PEP 8](https://pep8.org/)
+- **Formateo**: Black automático
+- **Nombres**: `snake_case` para funciones, `PascalCase` para clases
+- **Documentación**: Docstrings obligatorios en todas las funciones
 
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -am 'Agrega nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
+### Contribuir al Proyecto
 
-## 📄 Licencia
+```bash
+# 1. Fork del repositorio
+# 2. Crear rama para feature
+git checkout -b feature/mi-nueva-funcionalidad
 
-Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+# 3. Hacer cambios y commits
+git add .
+git commit -m "feat: Agrega nueva funcionalidad"
 
-## 📞 Contacto
+# 4. Push y Pull Request
+git push origin feature/mi-nueva-funcionalidad
+```
 
-Si tienes preguntas o sugerencias, no dudes en:
-- Abrir un issue en GitHub
-- Enviar un email a [tu.email@ejemplo.com]
-- Unirte a las discusiones del proyecto
+## 📚 Recursos de Aprendizaje
 
-## 🎓 Recursos Adicionales
+### Documentación Oficial
+- [Documentación de Python](https://docs.python.org/3/)
+- [Guía de VS Code para Python](https://code.visualstudio.com/docs/python/python-tutorial)
+- [Testing con pytest](https://docs.pytest.org/)
 
-- [Documentación oficial de Python](https://docs.python.org/)
+### Tutoriales Recomendados
 - [Real Python](https://realpython.com/) - Tutoriales avanzados
-- [Python Package Index (PyPI)](https://pypi.org/)
-- [VS Code Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Python Package Index (PyPI)](https://pypi.org/) - Repositorio de paquetes
+- [Buenas prácticas de Git](https://git-scm.com/book/en/v2)
 
-¡Feliz codificación! 🐍✨
+### Herramientas Adicionales
+- [Black Playground](https://black.vercel.app/) - Probar formateo online
+- [Python Tutor](https://pythontutor.com/) - Visualizar ejecución de código
+- [Jupyter Documentation](https://jupyter.org/documentation) - Guías de Jupyter
+
+---
+
+**¡Feliz codificación! 🐍✨**
+
+*Repositorio configurado para aprendizaje colaborativo y buenas prácticas de desarrollo en Python.*

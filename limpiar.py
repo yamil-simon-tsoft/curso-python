@@ -45,6 +45,16 @@ def limpiar_proyecto():
         except Exception as e:
             print(f"  ❌ Error eliminando {pytest_cache}: {e}")
     
+    # Eliminar carpeta .mypy_cache
+    mypy_cache = ".mypy_cache"
+    if os.path.exists(mypy_cache):
+        try:
+            shutil.rmtree(mypy_cache)
+            print(f"  ✅ Eliminado: {mypy_cache}")
+            elementos_limpiados += 1
+        except Exception as e:
+            print(f"  ❌ Error eliminando {mypy_cache}: {e}")
+    
     # Eliminar archivos .pyc individuales
     pyc_files = glob.glob("**/*.pyc", recursive=True)
     for pyc_file in pyc_files:
